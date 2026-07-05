@@ -22,3 +22,6 @@ Thumbs.db
 
 # Temporary / old files (kept outside repo)
 to delete/
+
+# Per-session handoff files — internal only, not part of the published manual
+SESSION_HANDOFF*.md
