@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="780" viewBox="0 0 720 780">
+  <defs>
+    <marker id="arrow4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="360" y="32" font-family="Segoe UI, Tahoma, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a202c">The Combat Pipeline</text>
+  
+  <!-- Player order -->
+  <rect x="280" y="55" width="160" height="42" rx="8" ry="8" fill="#e2e8f0" stroke="#4a5568" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="360" y="80" font-family="Segoe UI, Tahoma, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1a202c">Player order</text>
+  
+  <line x1="360" y1="97" x2="360" y2="130" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  
+  <!-- AttackBase -->
+  <rect x="270" y="135" width="180" height="50" rx="8" ry="8" fill="#feebc8" stroke="#dd6b20" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="360" y="160" font-family="Segoe UI, Tahoma, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#7c2d12">AttackBase</text>
+  <text x="360" y="177" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#7c2d12">chooses armament &amp; drives attack</text>
+  
+  <!-- AttackBase to Armament -->
+  <line x1="360" y1="185" x2="360" y2="220" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <text x="410" y="208" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">chooses armament</text>
+  
+  <!-- Armament -->
+  <rect x="270" y="225" width="180" height="50" rx="8" ry="8" fill="#feebc8" stroke="#dd6b20" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="360" y="250" font-family="Segoe UI, Tahoma, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#7c2d12">Armament</text>
+  <text x="360" y="267" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#7c2d12">range, reload, facing, barrel</text>
+  
+  <!-- Two branches from Armament -->
+  <line x1="360" y1="275" x2="360" y2="310" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  
+  <!-- Branch point -->
+  <circle cx="360" cy="315" r="4" fill="#4a5568"/>
+  
+  <!-- Left: Activity queue -->
+  <line x1="360" y1="315" x2="180" y2="315" stroke="#4a5568" stroke-width="2"/>
+  <line x1="180" y1="315" x2="180" y2="350" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <rect x="90" y="355" width="180" height="50" rx="8" ry="8" fill="#e9d8fd" stroke="#805ad5" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="180" y="380" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#553c9a">Activity queue</text>
+  <text x="180" y="397" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#553c9a">(Attack activity, Turn, etc.)</text>
+  
+  <!-- Right: IProjectile -->
+  <line x1="360" y1="315" x2="540" y2="315" stroke="#4a5568" stroke-width="2"/>
+  <line x1="540" y1="315" x2="540" y2="350" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <text x="470" y="308" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">builds ProjectileArgs</text>
+  
+  <rect x="450" y="355" width="180" height="50" rx="8" ry="8" fill="#c6f6d5" stroke="#38a169" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="540" y="380" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#22543d">IProjectile</text>
+  <text x="540" y="397" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#22543d">Bullet / Missile / InstantHit</text>
+  
+  <!-- Projectile travels -->
+  <line x1="540" y1="405" x2="540" y2="440" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <text x="590" y="428" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">travels, collides</text>
+  
+  <!-- WeaponInfo.Impact -->
+  <rect x="450" y="445" width="180" height="50" rx="8" ry="8" fill="#bee3f8" stroke="#3182ce" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="540" y="470" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#2c5282">WeaponInfo.Impact</text>
+  <text x="540" y="487" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#2c5282">dispatches to warheads</text>
+  
+  <!-- IWarhead.DoImpact -->
+  <line x1="540" y1="495" x2="540" y2="530" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <rect x="450" y="535" width="180" height="50" rx="8" ry="8" fill="#bee3f8" stroke="#3182ce" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="540" y="560" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#2c5282">IWarhead.DoImpact</text>
+  <text x="540" y="577" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#2c5282">SpreadDamage / CreateEffect / FireCluster</text>
+  
+  <!-- Warhead to Actor.InflictDamage -->
+  <line x1="540" y1="585" x2="540" y2="620" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <rect x="450" y="625" width="180" height="50" rx="8" ry="8" fill="#fed7e2" stroke="#d53f8c" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="540" y="650" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#97266d">Actor.InflictDamage</text>
+  <text x="540" y="667" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#97266d">forwards to Health</text>
+  
+  <!-- Health.InflictDamage -->
+  <line x1="540" y1="675" x2="540" y2="710" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <rect x="450" y="715" width="180" height="50" rx="8" ry="8" fill="#fed7e2" stroke="#d53f8c" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="540" y="740" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#97266d">Health.InflictDamage</text>
+  <text x="540" y="757" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#97266d">modifiers, armor, damage types</text>
+  
+  <!-- Three inputs to Health -->
+  <line x1="450" y1="740" x2="280" y2="740" stroke="#4a5568" stroke-width="2"/>
+  <line x1="280" y1="740" x2="280" y2="710" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <text x="230" y="735" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">IDamageModifier</text>
+  
+  <line x1="450" y1="755" x2="190" y2="755" stroke="#4a5568" stroke-width="2"/>
+  <line x1="190" y1="755" x2="190" y2="710" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <text x="120" y="750" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">Armor / Versus</text>
+  
+  <line x1="450" y1="770" x2="100" y2="770" stroke="#4a5568" stroke-width="2"/>
+  <line x1="100" y1="770" x2="100" y2="710" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+  <text x="40" y="765" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">DamageTypes</text>
+  
+  <!-- Final HP -->
+  <rect x="280" y="715" width="160" height="50" rx="8" ry="8" fill="#e2e8f0" stroke="#4a5568" stroke-width="2" filter="url(#shadow4)"/>
+  <text x="360" y="740" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1a202c">HP -= finalDamage</text>
+  <text x="360" y="757" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#1a202c">clamped, notifications fired</text>
+  
+  <line x1="360" y1="715" x2="360" y2="690" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow4)"/>
+</svg>

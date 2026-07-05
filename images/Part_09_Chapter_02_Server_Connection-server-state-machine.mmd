@@ -1,0 +1,9 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#e3f2fd', 'primaryTextColor': '#0d47a1', 'primaryBorderColor': '#1976d2', 'lineColor': '#1976d2', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#e8f5e9', 'fontFamily': 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'}, 'state': {'curve': 'basis'}}}%%
+stateDiagram-v2
+    direction LR
+    [*] --> Waiting
+    Waiting --> Waiting : Create / Join<br/>SyncLobbyInfo<br/>SetTeam, SetReady, SetColor, SetFaction
+    Waiting --> Launching : StartGame<br/>IStartGame finalize<br/>Session data
+    Launching --> Playing
+    Playing --> ShuttingDown : game ends<br/>host quits<br/>fatal error
+    ShuttingDown --> [*]

@@ -1,0 +1,67 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='640' height='860' viewBox='0 0 640 860'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0, 10 3.5, 0 7' fill='#555' />
+    </marker>
+  </defs>
+  <rect width='100%' height='100%' fill='white'/>
+  <style>
+    text { font-family: 'Segoe UI', Arial, sans-serif; }
+  </style>
+
+  <text x='320' y='20' text-anchor='middle' font-size='16' fill='#212121'>Terraformer.SliceElevation</text>
+  <rect x='120' y='40' width='400' height='50' rx='5' ry='5' fill='#BBDEFB' stroke='#1565C0' stroke-width='1.5'/>
+  <text x='320.0' y='60.0' text-anchor='middle' font-size='12' fill='#212121'>
+    <tspan x='320.0' dy='0'>elevation, mask, fraction,</tspan>
+    <tspan x='320.0' dy='16'>minimumContourSpacing</tspan>
+  </text>
+  <polygon points='320.0,110 420,140.0 320.0,170 220,140.0' fill='#FFE0B2' stroke='#E65100' stroke-width='1.5'/>
+  <text x='320.0' y='144.0' text-anchor='middle' font-size='12' fill='#212121'>mask == null?</text>
+  <rect x='80' y='200' width='300' height='50' rx='5' ry='5' fill='#BBDEFB' stroke='#1565C0' stroke-width='1.5'/>
+  <text x='230.0' y='220.25' text-anchor='middle' font-size='11' fill='#212121'>
+    <tspan x='230.0' dy='0'>return CalibratedBooleanThreshold(</tspan>
+    <tspan x='230.0' dy='15'>  elevation, fraction, FractionMax)</tspan>
+  </text>
+  <rect x='160' y='280' width='320' height='40' rx='5' ry='5' fill='#ECEFF1' stroke='#455A64' stroke-width='1.5'/>
+  <text x='320.0' y='303.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='320.0' dy='0'>filteredElevation = elevation.Clone()</tspan>
+  </text>
+  <rect x='160' y='340' width='320' height='40' rx='5' ry='5' fill='#ECEFF1' stroke='#455A64' stroke-width='1.5'/>
+  <text x='320.0' y='363.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='320.0' dy='0'>roominess = ChebyshevRoom(mask, true)</tspan>
+  </text>
+  <rect x='120' y='410' width='400' height='60' rx='5' ry='5' fill='#FFF9C4' stroke='#F57F17' stroke-width='1.5'/>
+  <text x='320.0' y='435.25' text-anchor='middle' font-size='11' fill='#212121'>
+    <tspan x='320.0' dy='0'>available = count(mask)</tspan>
+    <tspan x='320.0' dy='15'>masked cells -&gt; int.MinValue</tspan>
+  </text>
+  <rect x='80' y='500' width='480' height='60' rx='5' ry='5' fill='#C8E6C9' stroke='#2E7D32' stroke-width='1.5'/>
+  <text x='320.0' y='525.25' text-anchor='middle' font-size='11' fill='#212121'>
+    <tspan x='320.0' dy='0'>slice = CalibratedBooleanThreshold(</tspan>
+    <tspan x='320.0' dy='15'>  filteredElevation, available*fraction/FractionMax, total)</tspan>
+  </text>
+  <rect x='160' y='590' width='320' height='40' rx='5' ry='5' fill='#ECEFF1' stroke='#455A64' stroke-width='1.5'/>
+  <text x='320.0' y='613.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='320.0' dy='0'>minimumRoom = minimumContourSpacing + 1</tspan>
+  </text>
+  <rect x='120' y='660' width='400' height='50' rx='5' ry='5' fill='#FFF9C4' stroke='#F57F17' stroke-width='1.5'/>
+  <text x='320.0' y='680.25' text-anchor='middle' font-size='11' fill='#212121'>
+    <tspan x='320.0' dy='0'>for each cell:</tspan>
+    <tspan x='320.0' dy='15'>  slice &amp;= roominess &gt;= minimumRoom</tspan>
+  </text>
+  <rect x='220' y='740' width='200' height='40' rx='5' ry='5' fill='#BBDEFB' stroke='#1565C0' stroke-width='1.5'/>
+  <text x='320.0' y='763.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='320.0' dy='0'>return slice</tspan>
+  </text>
+  <line x1='320' y1='90' x2='320' y2='110' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <path d='M 220 140 Q 160 140 160 225 L 80 225' stroke='#555' stroke-width='1.5' fill='none' marker-end='url(#arrow)'/>
+  <text x='170' y='150' text-anchor='start' font-size='11' fill='#444'>Yes</text>
+  <line x1='320' y1='170' x2='320' y2='280' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <text x='330' y='225' text-anchor='start' font-size='11' fill='#444'>No</text>
+  <line x1='320' y1='320' x2='320' y2='340' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='320' y1='380' x2='320' y2='410' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='320' y1='470' x2='320' y2='500' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='320' y1='560' x2='320' y2='590' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='320' y1='630' x2='320' y2='660' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='320' y1='710' x2='320' y2='740' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+</svg>

@@ -1,0 +1,23 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#e3f2fd', 'primaryTextColor': '#0d47a1', 'primaryBorderColor': '#1976d2', 'lineColor': '#1976d2', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#e8f5e9', 'fontFamily': 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 8, 'nodeSpacing': 40, 'rankSpacing': 40}}}%%
+flowchart TD
+    Start([ProcessOrders])
+    Start --> ClientLoop{More clients?}
+    ClientLoop -->|No| SyncCheck{"NetFrameNumber >= GameSaveLastSyncFrame?"}
+    ClientLoop -->|Yes| Dequeue[Dequeue next frameOrders]
+    Dequeue --> FrameCheck{"frameNumber == NetFrameNumber?"}
+    FrameCheck -->|No| Throw[Throw InvalidDataException]
+    FrameCheck -->|Yes| DisconnectCheck{"orders == ClientDisconnected?"}
+    DisconnectCheck -->|Yes| RemoveClient[Mark client to remove<br/>World.OnClientDisconnected]
+    RemoveClient --> ClientLoop
+    DisconnectCheck -->|No| OrderProcess
+    subgraph OrderLoop [For each order in orders]
+        direction LR
+        OrderProcess[UnitOrders.ProcessOrder<br/>Record ClientOrder] --> MoreOrders{More orders?}
+        MoreOrders -->|Yes| OrderProcess
+    end
+    MoreOrders -->|No| ClientLoop
+    SyncCheck -->|Yes| ComputeDefeat[Build defeatState bitmask]
+    ComputeDefeat --> SendSync[Connection.SendSync]
+    SendSync --> Advance[NetFrameNumber++]
+    SyncCheck -->|No| Advance
+    Advance --> Finish([End])

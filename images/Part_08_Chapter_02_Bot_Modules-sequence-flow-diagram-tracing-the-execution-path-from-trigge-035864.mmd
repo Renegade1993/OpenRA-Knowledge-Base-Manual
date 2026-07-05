@@ -1,0 +1,9 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#e3f2fd', 'primaryTextColor': '#0d47a1', 'primaryBorderColor': '#1976d2', 'lineColor': '#1976d2', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#e8f5e9', 'fontFamily': 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 12}}}%%
+sequenceDiagram
+    participant A as Component A
+    participant B as Component B
+    participant C as Component C
+    A->>B: Request
+    B->>C: Process
+    C->>B: Result
+    B->>A: Response

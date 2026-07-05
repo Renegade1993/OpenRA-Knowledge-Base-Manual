@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+  <defs>
+    <marker id="arrow5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="380" y="32" font-family="Segoe UI, Tahoma, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a202c">The Two AST Shapes</text>
+  
+  <!-- Immutable side -->
+  <rect x="40" y="55" width="320" height="380" rx="12" ry="12" fill="#c6f6d5" stroke="#38a169" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="200" y="82" font-family="Segoe UI, Tahoma, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#22543d">Immutable</text>
+  <text x="200" y="100" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#22543d">read-only, produced by parsing</text>
+  
+  <!-- MiniYamlNode box -->
+  <rect x="70" y="125" width="130" height="120" rx="8" ry="8" fill="#ffffff" stroke="#38a169" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="135" y="148" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#22543d">MiniYamlNode</text>
+  <line x1="80" y1="158" x2="190" y2="158" stroke="#38a169" stroke-width="1"/>
+  <text x="85" y="178" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• Key (string)</text>
+  <text x="85" y="198" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• Value (MiniYaml)</text>
+  <text x="85" y="218" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• Comment (string)</text>
+  <text x="85" y="238" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• Location</text>
+  
+  <!-- MiniYaml box -->
+  <rect x="220" y="125" width="120" height="80" rx="8" ry="8" fill="#ffffff" stroke="#38a169" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="280" y="148" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#22543d">MiniYaml</text>
+  <line x1="230" y1="158" x2="330" y2="158" stroke="#38a169" stroke-width="1"/>
+  <text x="235" y="178" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• Value (string)</text>
+  <text x="235" y="198" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• Nodes</text>
+  <text x="235" y="213" font-family="Segoe UI, Tahoma, sans-serif" font-size="10" fill="#22543d">ImmutableArray&lt;Node&gt;</text>
+  
+  <!-- Arrow between immutable boxes -->
+  <path d="M200 245 L200 280 L280 280 L280 205" stroke="#38a169" stroke-width="2" marker-end="url(#arrow5)"/>
+  <text x="245" y="272" font-family="Segoe UI, Tahoma, sans-serif" font-size="10" fill="#22543d">contains</text>
+  
+  <!-- Immutable children nodes -->
+  <rect x="100" y="300" width="170" height="95" rx="8" ry="8" fill="#ffffff" stroke="#38a169" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="185" y="323" font-family="Segoe UI, Tahoma, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#22543d">Children</text>
+  <line x1="110" y1="333" x2="260" y2="333" stroke="#38a169" stroke-width="1"/>
+  <text x="115" y="353" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• safe to share &amp; cache</text>
+  <text x="115" y="373" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• comparable by reference</text>
+  <text x="115" y="393" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#22543d">• used by Ruleset</text>
+  
+  <!-- Mutable side -->
+  <rect x="400" y="55" width="320" height="380" rx="12" ry="12" fill="#feebc8" stroke="#dd6b20" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="560" y="82" font-family="Segoe UI, Tahoma, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#7c2d12">Mutable</text>
+  <text x="560" y="100" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#7c2d12">used for editing / settings</text>
+  
+  <!-- MiniYamlNodeBuilder box -->
+  <rect x="430" y="125" width="130" height="120" rx="8" ry="8" fill="#ffffff" stroke="#dd6b20" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="495" y="148" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#7c2d12">MiniYamlNodeBuilder</text>
+  <line x1="440" y1="158" x2="550" y2="158" stroke="#dd6b20" stroke-width="1"/>
+  <text x="445" y="178" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• Key (string)</text>
+  <text x="445" y="198" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• Value (MiniYamlBuilder)</text>
+  <text x="445" y="218" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• Comment (string)</text>
+  <text x="445" y="238" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• Location</text>
+  
+  <!-- MiniYamlBuilder box -->
+  <rect x="580" y="125" width="120" height="80" rx="8" ry="8" fill="#ffffff" stroke="#dd6b20" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="640" y="148" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#7c2d12">MiniYamlBuilder</text>
+  <line x1="590" y1="158" x2="690" y2="158" stroke="#dd6b20" stroke-width="1"/>
+  <text x="595" y="178" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• Value (string)</text>
+  <text x="595" y="198" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• Nodes</text>
+  <text x="595" y="213" font-family="Segoe UI, Tahoma, sans-serif" font-size="10" fill="#7c2d12">List&lt;NodeBuilder&gt;</text>
+  
+  <!-- Arrow between mutable boxes -->
+  <path d="M560 245 L560 280 L640 280 L640 205" stroke="#dd6b20" stroke-width="2" marker-end="url(#arrow5)"/>
+  <text x="605" y="272" font-family="Segoe UI, Tahoma, sans-serif" font-size="10" fill="#7c2d12">contains</text>
+  
+  <!-- Mutable children nodes -->
+  <rect x="460" y="300" width="170" height="95" rx="8" ry="8" fill="#ffffff" stroke="#dd6b20" stroke-width="2" filter="url(#shadow5)"/>
+  <text x="545" y="323" font-family="Segoe UI, Tahoma, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#7c2d12">Children</text>
+  <line x1="470" y1="333" x2="620" y2="333" stroke="#dd6b20" stroke-width="1"/>
+  <text x="475" y="353" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• editable in memory</text>
+  <text x="475" y="373" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• used by Settings.Commit</text>
+  <text x="475" y="393" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#7c2d12">• same line serialization</text>
+  
+  <!-- Shared serialization at bottom -->
+  <rect x="200" y="420" width="360" height="28" rx="6" ry="6" fill="#e2e8f0" stroke="#4a5568" stroke-width="1"/>
+  <text x="380" y="439" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#1a202c">Both serialize through MiniYamlExts.ToLines / MiniYaml.ToLines</text>
+</svg>

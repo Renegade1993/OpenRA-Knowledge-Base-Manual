@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="580" viewBox="0 0 760 580">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="380" y="32" font-family="Segoe UI, Tahoma, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a202c">The Movement Stack</text>
+  <text x="380" y="52" font-family="Segoe UI, Tahoma, sans-serif" font-size="12" text-anchor="middle" fill="#4a5568">From YAML rules down to pixel position</text>
+  
+  <!-- Layer 1: YAML rules -->
+  <rect x="240" y="70" width="280" height="42" rx="8" ry="8" fill="#e2e8f0" stroke="#4a5568" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="380" y="95" font-family="Segoe UI, Tahoma, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1a202c">YAML rules</text>
+  
+  <line x1="380" y1="112" x2="380" y2="140" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="410" y="132" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">loads</text>
+  
+  <!-- Layer 2: Info classes -->
+  <rect x="180" y="145" width="160" height="55" rx="8" ry="8" fill="#feebc8" stroke="#dd6b20" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="260" y="168" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#7c2d12">LocomotorInfo</text>
+  <text x="260" y="185" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#7c2d12">terrain costs, crush rules</text>
+  
+  <rect x="420" y="145" width="160" height="55" rx="8" ry="8" fill="#feebc8" stroke="#dd6b20" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="500" y="168" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#7c2d12">MobileInfo</text>
+  <text x="500" y="185" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#7c2d12">speed, turn speed, locomotor link</text>
+  
+  <!-- creates arrows -->
+  <path d="M260 200 L260 235" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="280" y="225" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">creates</text>
+  
+  <path d="M500 200 L500 235" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="520" y="225" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">creates</text>
+  
+  <!-- Layer 3: Runtime instances -->
+  <rect x="180" y="240" width="160" height="55" rx="8" ry="8" fill="#c6f6d5" stroke="#38a169" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="260" y="263" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#22543d">Locomotor</text>
+  <text x="260" y="280" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#22543d">world trait, cost/blocking cache</text>
+  
+  <rect x="420" y="240" width="160" height="55" rx="8" ry="8" fill="#c6f6d5" stroke="#38a169" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="500" y="263" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#22543d">Mobile</text>
+  <text x="500" y="280" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#22543d">per-actor position &amp; facing</text>
+  
+  <!-- Mobile to Move activity -->
+  <path d="M500 295 L500 335" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="520" y="320" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">queues</text>
+  
+  <!-- Move activity -->
+  <rect x="420" y="340" width="160" height="50" rx="8" ry="8" fill="#e9d8fd" stroke="#805ad5" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="500" y="363" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#553c9a">Move activity</text>
+  <text x="500" y="380" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#553c9a">owns the reversed path</text>
+  
+  <!-- Move to PathFinder -->
+  <path d="M420 365 L290 365 L290 405" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="350" y="358" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">uses</text>
+  
+  <!-- PathFinder -->
+  <rect x="210" y="405" width="160" height="50" rx="8" ry="8" fill="#bee3f8" stroke="#3182ce" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="290" y="428" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#2c5282">PathFinder</text>
+  <text x="290" y="445" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#2c5282">IPathFinder service</text>
+  
+  <!-- PathFinder to HPF -->
+  <path d="M290 455 L290 490" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="310" y="480" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">uses</text>
+  
+  <!-- HPF -->
+  <rect x="210" y="495" width="160" height="50" rx="8" ry="8" fill="#bee3f8" stroke="#3182ce" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="290" y="518" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#2c5282">HierarchicalPathFinder</text>
+  <text x="290" y="535" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#2c5282">abstract + local A*</text>
+  
+  <!-- Move to MoveFirstHalf/SecondHalf -->
+  <path d="M500 390 L500 430" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="520" y="415" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">delegates</text>
+  
+  <!-- MoveFirstHalf/SecondHalf -->
+  <rect x="420" y="435" width="160" height="50" rx="8" ry="8" fill="#e9d8fd" stroke="#805ad5" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="500" y="458" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#553c9a">MoveFirstHalf / SecondHalf</text>
+  <text x="500" y="475" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" text-anchor="middle" fill="#553c9a">per-cell motion interpolation</text>
+  
+  <!-- Final result -->
+  <rect x="300" y="525" width="200" height="42" rx="8" ry="8" fill="#fed7e2" stroke="#d53f8c" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="400" y="550" font-family="Segoe UI, Tahoma, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#97266d">Actor.CenterPosition updated</text>
+  
+  <path d="M500 485 L500 510 L460 510 L460 525" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="520" y="505" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">via Mobile.SetCenterPosition</text>
+  
+  <path d="M290 545 L260 545 L260 525" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="270" y="538" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">result</text>
+  
+  <!-- Right side labels -->
+  <text x="620" y="155" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">definition tier</text>
+  <text x="620" y="250" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">runtime tier</text>
+  <text x="620" y="345" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">activity layer</text>
+  <text x="620" y="415" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">path search layer</text>
+  <text x="620" y="525" font-family="Segoe UI, Tahoma, sans-serif" font-size="11" fill="#4a5568">motion layer</text>
+</svg>

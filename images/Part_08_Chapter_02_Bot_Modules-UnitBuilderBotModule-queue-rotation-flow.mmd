@@ -1,0 +1,18 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#e3f2fd', 'primaryTextColor': '#0d47a1', 'primaryBorderColor': '#1976d2', 'lineColor': '#1976d2', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#e8f5e9', 'fontFamily': 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 8, 'nodeSpacing': 40, 'rankSpacing': 40}}}%%
+flowchart TD
+    Start([Every FeedbackTime ticks])
+    Start --> Pending{Pending unit request?}
+    Pending -->|Yes| BuildReq[Build requested unit]
+    BuildReq --> Finish([Done])
+    Pending -->|No| IdleCap{"IdleBaseUnitsMaximum reached?"}
+    IdleCap -->|Yes| Finish
+    IdleCap -->|No| CashCheck{"Cash >= ProductionMinCashRequirement?"}
+    CashCheck -->|No| Finish
+    CashCheck -->|Yes| LoopStart([Loop over UnitQueues])
+    subgraph Rotation [Rotate through UnitQueues]
+        direction LR
+        Inc[Advance currentQueueIndex] --> GetCat[Get category & queues] --> Empty{queues empty?}
+        Empty -->|Yes<br/>next queue| Inc
+    end
+    Empty -->|No| BuildRandom[BuildRandomUnit<br/>from queues using UnitsToBuild]
+    BuildRandom --> Finish

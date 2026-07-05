@@ -1,0 +1,24 @@
+# OpenRA Knowledge Base Manual - Git ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated Pandoc/LaTeX intermediate files
+OpenRA_Knowledge_Base_Manual.aux
+OpenRA_Knowledge_Base_Manual.log
+OpenRA_Knowledge_Base_Manual.toc
+OpenRA_Knowledge_Base_Manual.tex
+OpenRA_Knowledge_Base_Manual.docx
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Temporary / old files (kept outside repo)
+to delete/

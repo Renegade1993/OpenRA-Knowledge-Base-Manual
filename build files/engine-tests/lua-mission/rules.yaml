@@ -1,0 +1,12 @@
+Player:
+    ModularBot@CampaignAI:
+        Name: bot-campaign-ai.name
+        Type: campaign
+    PlayerResources:
+        DefaultCash: 5000
+
+World:
+    LuaScript:
+        Scripts: campaign.lua, utils.lua, map.lua
+    MissionData:
+        Briefing: briefing

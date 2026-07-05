@@ -1,0 +1,115 @@
+# Prompt: Critique the OpenRA Knowledge Base Manual
+
+You are reviewing the **OpenRA Knowledge Base Manual**, a source-grounded technical reference for the OpenRA real-time strategy game engine. The manual is maintained as a single combined Markdown file plus a set of source chapter/appendix files.
+
+## What to read
+
+Read the combined canonical manual from beginning to end:
+
+**File:** `C:\Users\Kmoney\Documents\AI Projects\Cameo Work\Game Sources and Development Reference Materials\OpenRA Manual\Manual\OpenRA_Knowledge_Base_Manual.md`
+
+The manual source files (chapters and appendices) live in:
+- `C:\Users\Kmoney\Documents\AI Projects\Cameo Work\Game Sources and Development Reference Materials\OpenRA Manual\Manual\build files\chapters\`
+- `C:\Users\Kmoney\Documents\AI Projects\Cameo Work\Game Sources and Development Reference Materials\OpenRA Manual\Manual\build files\appendices\`
+
+The OpenRA engine source is cloned at:
+`C:\Users\Kmoney\Documents\AI Projects\Cameo Work\Game Sources and Development Reference Materials\OpenRA GitHub Repositories\OpenRA`
+
+## Your task
+
+Give a rigorous, critical review of the manual as an **educational resource**. Focus on what would help or confuse a reader who is:
+
+1. A new modder trying to make their first custom unit or map.
+2. An engine contributor trying to understand a subsystem well enough to modify it.
+3. An AI researcher or LLM using the manual as a source-grounded reference.
+
+## Specific review dimensions
+
+Please address each of the following and provide **concrete, actionable recommendations** with file paths and, where possible, line numbers or section names.
+
+### 1. Technical accuracy
+- Are class names, file paths, method names, and YAML keys correct against the OpenRA source at the playtest-20260222-76-g972c10ec80 tag?
+- Are code snippets syntactically plausible and consistent with the engine?
+- Are there outdated or removed APIs referenced as current?
+- Are there any statements that contradict the source code?
+
+### 2. Educational clarity
+- Which concepts are explained well? Which are explained poorly or too briefly?
+- Are the learning objectives at the start of each chapter actually met by the chapter content?
+- Are there places where a reader would get lost due to missing prerequisites or undefined terms?
+- Is the level of detail appropriate for the stated audiences?
+
+### 3. Completeness and gaps
+- What important topics, subsystems, or edge cases are missing?
+- Are there chapters that feel like stubs or summaries rather than deep dives?
+- Are the appendices sufficient as quick reference material?
+- What would you add to make the manual comprehensive?
+
+### 4. Pedagogical structure
+- Are the `Purpose`, `Learning Objectives`, `Practical Example`, `Architecture`, `Data Flow`, `Algorithms`, `Extension Points`, `Common Pitfalls`, `References`, and `What to read next` sections used consistently and effectively?
+- Are there missing Summary sections or inconsistent Practical Example coverage?
+- Are the `What to read next` suggestions actually the right next steps?
+
+### 5. Visual aids and diagrams
+- The source files contain invisible `<!-- DEV-NOTE [visual-aid]: ... -->` comments that flag where diagrams should be produced.
+- Are these comments sufficient? Are there sections where a diagram is *not* flagged but is desperately needed?
+- Are any flagged visual aids redundant or low-value?
+- Suggest 3–5 high-priority diagrams that should be produced first.
+
+### 6. Tooling and external links
+- The source files contain `<!-- DEV-NOTE [tooling]: ... -->` comments and inline links to external resources.
+- Are the suggested tools the right ones for the workflow?
+- Are there missing links to official OpenRA docs, community tutorials, or third-party tools?
+- Are any inline links broken, misleading, or unnecessary?
+
+### 7. Cross-references and navigation
+- Are internal links consistent and do they point to the right chapters/appendices?
+- Is the Table of Contents in the combined manual useful?
+- Are there orphan sections or references to content that does not exist?
+
+### 8. Code and YAML examples
+- Are the minimal-actor examples and recipes correct and copy-paste friendly?
+- Are there YAML syntax errors or inheritance mistakes?
+- Are the examples aligned with current OpenRA mod conventions?
+
+### 9. Tone, style, and production readiness
+- Is the tone consistent across chapters?
+- Is there excessive jargon without explanation?
+- Are there formatting inconsistencies, broken tables, or markdown rendering issues?
+- Is the manual ready to be converted to DOCX/PDF, or are there blockers?
+
+### 10. Prioritized action list
+- Give a top-10 list of changes ranked by educational impact.
+- For each item, state: the problem, why it matters, the file(s), and the recommended fix.
+
+## Output format
+
+Structure your response as:
+
+1. **Executive summary** (3–5 bullets).
+2. **Strengths** (what the manual does well).
+3. **Weaknesses** (the biggest problems).
+4. **Detailed findings by dimension** (the 10 dimensions above).
+5. **Top-10 prioritized action list**.
+6. **Optional: suggestions for visual aids** (respect the existing `<!-- DEV-NOTE [visual-aid]: ... -->` convention; do not propose adding raw images directly).
+
+## Constraints
+
+- Do not suggest adding images, screenshots, or diagrams directly to the Markdown. Instead, add a `<!-- DEV-NOTE [visual-aid]: description -->` comment above the relevant section.
+- Do not propose changing the overall project structure or file organization.
+- Be specific: cite file paths and section names, not just generic complaints.
+- If you are unsure about a factual claim, say so rather than guessing.
+
+Thank you.
+
+# Additional context for the reviewing AI
+
+- The manual targets the OpenRA engine at tag `playtest-20260222-76-g972c10ec80`.
+- The build/verification scripts are:
+  - `assemble_manual.py` — combines source files into `OpenRA_Knowledge_Base_Manual.md`
+  - `verify_paths.py` — checks OpenRA source file references
+  - `verify_internal_links.py` — checks internal Markdown links
+- The `OpenRA Manual Build Files/` directory contains planning documents, research modules, and the chapter template.
+- The `Manual/` directory contains the readable manual and the combined single-file edition.
+- Use the playtest docs at https://docs.openra.net/en/playtest/ as the primary reference, with release docs at https://docs.openra.net/en/release/ as fallback.
+- The community Lua tutorial is at https://steamsdev.github.io/content/openratut/home.html.

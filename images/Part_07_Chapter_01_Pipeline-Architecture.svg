@@ -1,0 +1,87 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='900' viewBox='0 0 1100 900'>
+  <defs>
+    <marker id='arrow' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto' markerUnits='strokeWidth'>
+      <polygon points='0 0, 10 3.5, 0 7' fill='#555' />
+    </marker>
+  </defs>
+  <rect width='100%' height='100%' fill='white'/>
+  <style>
+    text { font-family: 'Segoe UI', Arial, sans-serif; }
+  </style>
+
+  <text x='550' y='20' text-anchor='middle' font-size='16' fill='#212121'>Map Generation Pipeline</text>
+  <rect x='450' y='35' width='200' height='40' rx='5' ry='5' fill='#BBDEFB' stroke='#1565C0' stroke-width='1.5'/>
+  <text x='550.0' y='58.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='550.0' dy='0'>Chrome / User</tspan>
+  </text>
+  <rect x='100' y='110' width='260' height='50' rx='5' ry='5' fill='#FFE0B2' stroke='#E65100' stroke-width='1.5'/>
+  <text x='230.0' y='129.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='230.0' dy='0'>Map Chooser</tspan>
+    <tspan x='230.0' dy='17'>MapGeneratorLogic</tspan>
+  </text>
+  <rect x='740' y='110' width='260' height='50' rx='5' ry='5' fill='#FFE0B2' stroke='#E65100' stroke-width='1.5'/>
+  <text x='870.0' y='129.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='870.0' dy='0'>Editor Tool</tspan>
+    <tspan x='870.0' dy='17'>MapGeneratorToolLogic</tspan>
+  </text>
+  <rect x='100' y='190' width='260' height='50' rx='5' ry='5' fill='#FFF9C4' stroke='#F57F17' stroke-width='1.5'/>
+  <text x='230.0' y='209.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='230.0' dy='0'>IEditorMapGeneratorInfo</tspan>
+    <tspan x='230.0' dy='17'>GetSettings()</tspan>
+  </text>
+  <rect x='740' y='190' width='260' height='50' rx='5' ry='5' fill='#FFF9C4' stroke='#F57F17' stroke-width='1.5'/>
+  <text x='870.0' y='209.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='870.0' dy='0'>IEditorMapGeneratorInfo</tspan>
+    <tspan x='870.0' dy='17'>GetSettings()</tspan>
+  </text>
+  <rect x='100' y='270' width='260' height='50' rx='5' ry='5' fill='#FFF9C4' stroke='#F57F17' stroke-width='1.5'/>
+  <text x='230.0' y='289.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='230.0' dy='0'>IMapGeneratorSettings</tspan>
+    <tspan x='230.0' dy='17'>Options</tspan>
+  </text>
+  <rect x='740' y='270' width='260' height='50' rx='5' ry='5' fill='#FFF9C4' stroke='#F57F17' stroke-width='1.5'/>
+  <text x='870.0' y='289.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='870.0' dy='0'>IMapGeneratorSettings</tspan>
+    <tspan x='870.0' dy='17'>Options</tspan>
+  </text>
+  <rect x='450' y='350' width='200' height='40' rx='5' ry='5' fill='#C8E6C9' stroke='#2E7D32' stroke-width='1.5'/>
+  <text x='550.0' y='373.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='550.0' dy='0'>MapGeneratorSettings.Compile</tspan>
+  </text>
+  <rect x='450' y='420' width='200' height='40' rx='5' ry='5' fill='#E1BEE7' stroke='#7B1FA2' stroke-width='1.5'/>
+  <text x='550.0' y='443.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='550.0' dy='0'>MapGenerationArgs</tspan>
+  </text>
+  <rect x='450' y='490' width='200' height='40' rx='5' ry='5' fill='#C8E6C9' stroke='#2E7D32' stroke-width='1.5'/>
+  <text x='550.0' y='513.25' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='550.0' dy='0'>IMapGeneratorInfo.Generate</tspan>
+  </text>
+  <rect x='390' y='560' width='320' height='50' rx='5' ry='5' fill='#BBDEFB' stroke='#1565C0' stroke-width='1.5'/>
+  <text x='550.0' y='579.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='550.0' dy='0'>Map</tspan>
+    <tspan x='550.0' dy='17'>(tiles, resources, actors, height)</tspan>
+  </text>
+  <rect x='200' y='660' width='260' height='50' rx='5' ry='5' fill='#ECEFF1' stroke='#455A64' stroke-width='1.5'/>
+  <text x='330.0' y='679.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='330.0' dy='0'>MapPreview / Save</tspan>
+    <tspan x='330.0' dy='17'>(map chooser)</tspan>
+  </text>
+  <rect x='640' y='660' width='260' height='50' rx='5' ry='5' fill='#ECEFF1' stroke='#455A64' stroke-width='1.5'/>
+  <text x='770.0' y='679.75' text-anchor='middle' font-size='13' fill='#212121'>
+    <tspan x='770.0' dy='0'>EditorBlit / EditorAction</tspan>
+    <tspan x='770.0' dy='17'>(editor)</tspan>
+  </text>
+  <line x1='550' y1='75' x2='230' y2='110' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='550' y1='75' x2='870' y2='110' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='230' y1='160' x2='230' y2='190' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='870' y1='160' x2='870' y2='190' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='230' y1='240' x2='230' y2='270' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='870' y1='240' x2='870' y2='270' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <path d='M 230 320 Q 230 340 450 370' stroke='#555' stroke-width='1.5' fill='none' marker-end='url(#arrow)'/>
+  <path d='M 870 320 Q 870 340 650 370' stroke='#555' stroke-width='1.5' fill='none' marker-end='url(#arrow)'/>
+  <line x1='550' y1='390' x2='550' y2='420' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='550' y1='460' x2='550' y2='490' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='550' y1='530' x2='550' y2='560' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='550' y1='610' x2='330' y2='660' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+  <line x1='550' y1='610' x2='770' y2='660' stroke='#555' stroke-width='1.5' marker-end='url(#arrow)'/>
+</svg>

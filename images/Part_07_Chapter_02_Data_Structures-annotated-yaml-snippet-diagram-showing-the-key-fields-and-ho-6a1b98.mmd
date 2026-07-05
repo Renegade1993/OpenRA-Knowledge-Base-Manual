@@ -1,0 +1,11 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#e3f2fd', 'primaryTextColor': '#0d47a1', 'primaryBorderColor': '#1976d2', 'lineColor': '#1976d2', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#e8f5e9', 'fontFamily': 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 12}}}%%
+flowchart LR
+    subgraph YAML["YAML Definition"]
+        F1[Field 1]
+        F2[Field 2]
+        F3[Field 3]
+    end
+    F1 -->|loads| C1[C# Property]
+    F2 -->|loads| C2[C# Property]
+    F3 -->|loads| C3[C# Property]
+    style YAML fill:#e3f2fd,stroke:#1976d2,stroke-width:2px

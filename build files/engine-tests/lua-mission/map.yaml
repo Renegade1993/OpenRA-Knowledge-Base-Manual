@@ -1,0 +1,64 @@
+# TEST MISSION map.yaml — Appendix G, Walkthrough 2.
+# IMPORTANT: a map also needs a matching map.bin (tile/height data). The easiest way
+# to get a valid map.bin is to create a NEW 96x96 TEMPERAT map in the in-game map editor
+# (saved as "manual-mission"), then replace the editor's generated map.yaml with this file
+# and drop rules.yaml + map.lua alongside it. Keep MapSize/Bounds matching the editor map.
+MapFormat: 12
+RequiresMod: ra
+Title: Manual Test Mission
+Author: OpenRA Manual
+Tileset: TEMPERAT
+MapSize: 96,96
+Bounds: 16,16,64,64
+Visibility: MissionSelector
+Categories: Campaign
+LockPreview: True
+
+Rules: ra|rules/campaign-rules.yaml, ra|rules/campaign-tooltips.yaml, ra|rules/campaign-palettes.yaml, rules.yaml
+
+FluentMessages: ra|fluent/lua.ftl, ra|fluent/campaign.ftl, map.ftl
+
+Players:
+    PlayerReference@Neutral:
+        Name: Neutral
+        OwnsWorld: True
+        NonCombatant: True
+        Faction: Random
+    PlayerReference@USSR:
+        Name: USSR
+        Playable: True
+        Required: True
+        Faction: soviet
+        LockFaction: True
+        Enemies: Germany
+    PlayerReference@Germany:
+        Name: Germany
+        Faction: allies
+        Color: 5050F0
+        Enemies: USSR
+        Bot: campaign
+
+Actors:
+    Actor0: fact
+        Location: 30,30
+        Owner: USSR
+    Actor1: harv
+        Location: 32,32
+        Owner: USSR
+    Actor2: e1
+        Location: 28,30
+        Owner: USSR
+        Facing: 128
+    Actor3: weap
+        Location: 45,45
+        Owner: Germany
+    Actor4: 2tnk
+        Location: 47,47
+        Owner: Germany
+        Facing: 64
+    Waypoint1: waypoint
+        Location: 30,35
+        Owner: Neutral
+    EnemyEntry: waypoint
+        Location: 79,79
+        Owner: Neutral

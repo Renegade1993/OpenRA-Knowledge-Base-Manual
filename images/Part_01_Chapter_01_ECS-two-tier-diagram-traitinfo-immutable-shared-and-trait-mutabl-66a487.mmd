@@ -1,0 +1,8 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#e3f2fd', 'primaryTextColor': '#0d47a1', 'primaryBorderColor': '#1976d2', 'lineColor': '#1976d2', 'secondaryColor': '#fff3e0', 'tertiaryColor': '#e8f5e9', 'fontFamily': 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 12}}}%%
+flowchart TD
+    YAML[YAML Actor Definition] -->|loads| AI[ActorInfo]
+    AI -->|TraitInfo.Create| T[Trait Instances]
+    AI -->|shared| TI[TraitInfo Immutable]
+    T -->|per-actor| Actor[Actor]
+    style TI fill:#fff3e0
+    style T fill:#e8f5e9

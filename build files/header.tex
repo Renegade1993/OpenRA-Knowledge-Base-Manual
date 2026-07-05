@@ -1,0 +1,101 @@
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{tikz}
+
+% Default image sizing: cap figures at text width / 45% of page height and
+% center them on the line. The 0.55 shrink is applied by patching the
+% Pandoc \pandocbounded macro below.
+\adjustboxset{max width=\textwidth, max height=0.45\textheight, keepaspectratio, center}
+
+% Force figures to stay inline with the text rather than floating to their own
+% pages.  Pandoc's default template sets \fps@figure to htbp, so we override it
+% after the preamble is complete using the float package's placement command.
+\AtBeginDocument{%
+  \floatplacement{figure}{H}%
+  \makeatletter
+  \gdef\fps@figure{H}%
+  \makeatother
+  % Shrink Pandoc figures by ~45% so they sit inline with the text.
+  % Also force each figure onto its own centered line so text does not wrap on the same line.
+  \let\oldpandocbounded\pandocbounded
+  \renewcommand{\pandocbounded}[1]{\par{\centering\scalebox{0.55}{\oldpandocbounded{#1}}\par}}%
+}
+
+% Custom title page: centered logo, title, subtitle, dedication, and mod icons.
+\makeatletter
+\renewcommand{\maketitle}{%
+  \thispagestyle{empty}%
+  \begin{titlepage}%
+    \centering
+    \vspace*{1.5cm}%
+    {\includegraphics[width=3.2in]{"build files/icons/openra_512.png"}}%
+    \vspace{1.5cm}%
+
+    {\Huge\bfseries OpenRA Knowledge Base Manual\par}%
+    \vspace{0.6cm}%
+    {\Large A Comprehensive Modder's and Developer's Reference\par}%
+    \vspace{2cm}%
+
+    {\large\itshape Dedicated to the OpenRA community,\par}%
+    {\large\itshape and my love of all things Command \& Conquer\par}%
+
+    \vfill
+
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=south west, inner sep=0pt] at (current page.south west) [xshift=1.5cm, yshift=1.5cm]
+        {\includegraphics[width=1.4in]{"build files/icons/cnc_256.png"}};
+      \node[anchor=south, inner sep=0pt] at (current page.south) [yshift=1.5cm]
+        {\includegraphics[width=1.4in]{"build files/icons/ts_256.png"}};
+      \node[anchor=south east, inner sep=0pt] at (current page.south east) [xshift=-1.5cm, yshift=1.5cm]
+        {\includegraphics[width=1.4in]{"build files/icons/d2k_256.png"}};
+    \end{tikzpicture}
+  \end{titlepage}%
+  \newpage
+}
+\makeatother
+
+% Page headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small OpenRA Knowledge Base Manual}
+\fancyhead[R]{\small \nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+ \fancyfoot[R]{%
+  \raisebox{-2pt}{\includegraphics[height=18pt]{"build files/icons/ra_32x32.png"}}%
+  \hspace{2pt}%
+  \raisebox{-2pt}{\includegraphics[height=18pt]{"build files/icons/cnc_32x32.png"}}%
+  \hspace{2pt}%
+  \raisebox{-2pt}{\includegraphics[height=18pt]{"build files/icons/d2k_32x32.png"}}%
+  \hspace{2pt}%
+  \raisebox{-2pt}{\includegraphics[height=18pt]{"build files/icons/ts_32x32.png"}}%
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Table styling: keep dense reference tables inside landscape pages.
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.15}
+
+% Code block styling
+\definecolor{codebg}{HTML}{F5F5F5}
+\definecolor{codeframe}{HTML}{DDDDDD}
+
+% Make longtables fill the available width better
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}{\oldlongtable}{\endoldlongtable}
+
+% Allow line breaks in code blocks
+\usepackage[htt]{hyphenat}
+\renewcommand{\texttt}[1]{\ttfamily#1}
