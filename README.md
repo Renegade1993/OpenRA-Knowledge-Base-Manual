@@ -49,7 +49,16 @@ This project references and renders game assets (e.g., sprites, cameos, sounds) 
 
 ## GitHub and transparency
 
-This project is designed to be forked and contributed to by the OpenRA community. The entire workflow is documented here and in `build files/EXPORT_PIPELINE.md` so that anyone can:
+### Authors and credits
+
+- **Renegade1993** — project author, curator, and primary researcher: https://github.com/Renegade1993
+- **Devin** — AI engineering assistant by Cognition (https://devin.ai) — helped assemble, verify, and export the manual.
+- **OpenRA contributors** — the engine, documentation, and modding community that produced the source material this manual synthesizes.
+- **Game asset owners** — all rendered game assets (sprites, cameos, sounds, terrain tiles, etc.) belong to their respective owners (Westwood/EA for *Command & Conquer*, *Red Alert*, and *Dune 2000*). They are included as fair-use educational reference material; we claim no ownership and will remove or replace them if a rights holder requests it.
+
+### Contributions welcome
+
+Feedback, suggestions, corrections, and contributions are **more than welcome**. The best way to help is to open a GitHub issue or submit a pull request. The entire workflow is documented here and in `build files/EXPORT_PIPELINE.md` so that anyone can:
 
 - Read the combined manual: `OpenRA_Knowledge_Base_Manual.md`.
 - Edit the source chapters in `build files/chapters/` and `build files/appendices/`.
