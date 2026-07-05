@@ -6,6 +6,37 @@
 - **Generated first exports:** `OpenRA_Knowledge_Base_Manual.docx` (5.8 MB) and `OpenRA_Knowledge_Base_Manual.pdf` (4.7 MB) with all 681 SVG diagrams and 380 actor sprites embedded.
 
 
+## 2026-07-04 — Round 19: GitHub release v0.5-beta, local backup, and release process
+
+### What was done
+- Initialized a local git repository in the flattened `OpenRA Manual/` project root and made the initial commit (`9b8e592`) for **v.5**.
+- Updated `README.md` to credit **Renegade1993** (https://github.com/Renegade1993), **Devin** (Cognition, https://devin.ai), OpenRA contributors, and the original game-asset owners, and to explicitly welcome feedback, suggestions, and contributions.
+- Created the public GitHub repository `https://github.com/Renegade1993/OpenRA-Knowledge-Base-Manual` and pushed the `main` branch.
+- Created GitHub release `v0.5-beta` at `https://github.com/Renegade1993/OpenRA-Knowledge-Base-Manual/releases/tag/v0.5-beta` and attached the PDF (`OpenRA_Knowledge_Base_Manual.pdf`, 39.6 MB).
+- Removed internal-only `SESSION_HANDOFF_NEXT.md` from the published repo, added `SESSION_HANDOFF*.md` to `.gitignore`, and moved the file to `to delete/`.
+- Re-tagged `v0.5-beta` to the cleaned commit so the auto-generated release source archive also excludes the handoff file.
+- Created a local release backup under `S:\Game Install Files\2. - Free Games -\Command & Conquer OpenRA (Command & Conquer OpenRA)\Kmoney's OpenRA Manual\Installers\V0.5\` containing:
+  - `OpenRA_Knowledge_Base_Manual.pdf` (release PDF)
+  - `OpenRA-Knowledge-Base-Manual-v0.5-beta-source.zip` (source-only archive, `.git` excluded, no handoff file)
+
+### Release / backup procedure for future versions
+For every new version pushed to GitHub, mirror the release contents locally inside a new `Installers/VX.XX` subdirectory under `S:\Game Install Files\2. - Free Games -\Command & Conquer OpenRA (Command & Conquer OpenRA)\Kmoney's OpenRA Manual\`. Each subdirectory should contain:
+1. The latest complete manual PDF (`OpenRA_Knowledge_Base_Manual.pdf`).
+2. A zip of the source files (repo contents minus `.git` and any internal-only files like `SESSION_HANDOFF*.md`).
+
+This ensures the local `Installers` folder always matches the published GitHub release page.
+
+### Files changed
+- `README.md` (credits + contributions note)
+- `.gitignore` (added `SESSION_HANDOFF*.md`)
+- `SESSION_HANDOFF_NEXT.md` (removed from repo; moved to `to delete/`)
+
+### Result
+- GitHub release page is live and populated with the PDF and source archive.
+- Local backup created and verified clean (no `SESSION_HANDOFF` file in the source zip).
+- Manual remains 1,369 pages / 39.6 MB, with 275 source paths and 6,332 internal links verified.
+
+
 ## 2026-07-03 — Round 18: Replace CnC supply truck cameo with RA TRUK icon
 
 ### What was done
